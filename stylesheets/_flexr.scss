@@ -1,0 +1,40 @@
+@import "compass/css3/shared";
+
+$flexr-support: -moz, -webkit, not -o, -ms, official !default;
+
+@mixin flexr(
+	$el: li,
+	$direction: null,
+	$align: null,
+	$justify: null,
+	$flex: null){
+	// Establish the Flex formatting context
+	@include experimental-value(display, flex, $flexr-support...);
+
+	// Set a flex-direction
+	@include experimental(flex-direction, $direction, $flexr-support...);
+
+	// Align flex items
+	@include experimental(align-items, $align, $flexr-support...);
+
+	// Define the flex container alignment and distribution of space
+	@include experimental(justify-content, $justify, $flexr-support...);
+
+	// Target flex items, and define a flex value
+	& > #{$el} {
+		@include experimental(flex, $flex, $flexr-support...);
+	}
+}
+
+@mixin flexr-grow($item, $amount){
+	// Define the flex grow factor of a flex item
+	& > :nth-child(#{$item}){
+		@include experimental(flex-grow, $amount, $flexr-support...);
+	}
+}
+
+@mixin flexr-order($order){
+	// Set the layout of a flex item
+	@include experimental(order, $order, $flexr-support...);
+
+}

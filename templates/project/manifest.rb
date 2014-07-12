@@ -1,10 +1,8 @@
 # Description
-description "Description of your Compass Template"
+description "A Simple Flex-box Compass Extension."
 
 # Stylesheet Import
-file 'screen.scss', :like => :stylesheet, :media => 'screen, projection'
-file 'print.scss', :like => :stylesheet, :media => 'screen, projection'
-file 'ie.scss', :like => :stylesheet, :media => 'screen, projection', :condition => "lt IE 9"
+file 'flexr-demo.scss', :like => :stylesheet, :media => 'screen, projection'
 
 # Javascript Import
 # file 'scripts.js', :like => :javascript, :to => 'scripts.js'
